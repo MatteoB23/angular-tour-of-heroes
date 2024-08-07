@@ -1,8 +1,5 @@
-import { Component, Input, OnInit} from '@angular/core';
-import {
-  UpperCasePipe,
-  CommonModule,
-} from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
@@ -16,7 +13,7 @@ import { HeroService } from '../hero.service';
   standalone: true,
   imports: [FormsModule, UpperCasePipe],
   templateUrl: './hero-detail.component.html',
-  styleUrl: './hero-detail.component.css'
+  styleUrl: './hero-detail.component.css',
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
@@ -39,11 +36,16 @@ export class HeroDetailComponent implements OnInit {
 
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+    }
   }
 }
