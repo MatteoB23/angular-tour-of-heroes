@@ -1,0 +1,28 @@
+/* Search result list */
+.hero-search ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 175px;
+  margin-top: 0;
+  padding-left: 0;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+/* Search result item */
+.hero-search li {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  width: 155px;
+}
+
+/* Hero name styles */
+.hero-search a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: normal;
+}

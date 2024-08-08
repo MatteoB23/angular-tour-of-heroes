@@ -6,14 +6,6 @@
   width: 15em;
 }
 
-input {
-  display: block;
-  width: 100%;
-  padding: .5rem;
-  margin: 1rem 0;
-  box-sizing: border-box;
-}
-
 .heroes li {
   position: relative;
   cursor: pointer;
@@ -63,9 +55,12 @@ input {
 }
 
 .add-button {
+  font-family: Arial, Helvetica, sans-serif;
   padding: .5rem 1.5rem;
   font-size: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
+  display: block;
 }
 
 .add-button:hover {
@@ -74,11 +69,12 @@ input {
 }
 
 button.delete {
+  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
   left: 210px;
   top: 5px;
   background-color: white;
-  color:  #525252;
+  color: #525252;
   font-size: 1.1rem;
   margin: 0;
   padding: 1px 10px 3px 10px;

@@ -19,7 +19,11 @@
 
 <div>
   <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+  <input
+    id="new-hero"
+    #heroName
+    (keydown.enter)="add(heroName.value); heroName.value = ''"
+  />
 
   <!-- (click) passes input value to add() and then clears the input -->
   <button
@@ -30,5 +34,3 @@
     Add hero
   </button>
 </div>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
