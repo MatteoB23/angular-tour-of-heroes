@@ -40,3 +40,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+Backend/TourOfHeroApi/bin/Debug/net7.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll

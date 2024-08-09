@@ -12,7 +12,7 @@ export class HeroService {
     private messageService: MessageService
   ) {}
 
-  private heroesUrl = 'api/heroes'; // URL to web api
+  private heroesUrl = 'http://localhost:5207/hero'; // URL to web api
 
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl).pipe(
@@ -21,8 +21,8 @@ export class HeroService {
     );
   }
 
-  getHero(id: number): Observable<Hero> {
-    if (id === 0) {
+  getHero(id: string): Observable<Hero> {
+    if (id == "") {
       return of({}) as Observable<Hero>;
     }
     const url = `${this.heroesUrl}/${id}`;
@@ -71,7 +71,7 @@ export class HeroService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteHero(id: number): Observable<Hero> {
+  deleteHero(id: string): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
 
     return this.http.delete<Hero>(url, this.httpOptions).pipe(

@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
 
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -17,7 +16,6 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
-  heroes = HEROES;
   selectedHero?: Hero;
 
   constructor(
@@ -35,7 +33,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
   }
 
