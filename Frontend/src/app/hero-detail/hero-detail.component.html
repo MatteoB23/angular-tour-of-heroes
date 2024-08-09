@@ -1,12 +1,21 @@
 @if(hero){
 <h2>{{ hero.name | uppercase }} Details</h2>
-<div><span>id: </span>{{ hero.id }}</div>
+<div class="id-field"><span>id: </span>{{ hero.id }}</div>
 <div>
-  <label for="hero-name">Hero name: </label>
+  <label for="hero-name">Hero Name: </label>
   <input
     id="hero-name"
     [(ngModel)]="hero.name"
     placeholder="Hero name"
+    (keydown.enter)="save()"
+  />
+</div>
+<div>
+  <label for="hero-alter">Hero Alter: </label>
+  <input
+    id="hero-alter"
+    [(ngModel)]="hero.alter"
+    placeholder="Hero Alter"
     (keydown.enter)="save()"
   />
 </div>

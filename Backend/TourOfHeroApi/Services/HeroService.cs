@@ -40,6 +40,7 @@ namespace TourOfHeroApi.Services
             {
                 temp.Name = hero.Name;
                 temp.Id = hero.Id;
+                temp.Alter = hero.Alter;
             }
 
             _context.SaveChanges();

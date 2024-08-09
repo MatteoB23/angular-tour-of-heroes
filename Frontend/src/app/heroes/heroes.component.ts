@@ -28,12 +28,12 @@ export class HeroesComponent {
     this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
 
-  add(name: string): void {
+  add(name: string, alter: number): void {
     name = name.trim();
     if (!name) {
       return;
     }
-    this.heroService.addHero({ name } as Hero).subscribe((hero) => {
+    this.heroService.addHero({ name, alter } as Hero).subscribe((hero) => {
       this.heroes.push(hero);
     });
   }

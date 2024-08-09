@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TourOfHeroApi.Database;
 
@@ -11,9 +12,11 @@ using TourOfHeroApi.Database;
 namespace TourOfHeroApi.Migrations
 {
     [DbContext(typeof(HeroDbContext))]
-    partial class HeroDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240809110142_AddAlter")]
+    partial class AddAlter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

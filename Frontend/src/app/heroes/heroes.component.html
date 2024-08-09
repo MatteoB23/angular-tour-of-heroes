@@ -18,19 +18,30 @@
 </ul>
 
 <div>
-  <label for="new-hero">Hero name: </label>
-  <input
-    id="new-hero"
-    #heroName
-    (keydown.enter)="add(heroName.value); heroName.value = ''"
-  />
+  <div>
+    <label for="new-hero">Hero name: </label>
+    <input
+      id="new-hero"
+      #heroName
+      (keydown.enter)="add(heroName.value, +heroAlter.value); heroName.value = ''; heroAlter.value = ''"
+    />
+  </div>
+  <div>
+    <label for="new-hero">Hero alter: </label>
+    <input
+      id="new-alter"
+      class="input"
+      #heroAlter
+      (keydown.enter)="add(heroName.value, +heroAlter.value); heroName.value = ''; heroAlter.value = ''"
+    />
+  </div>
 
   <!-- (click) passes input value to add() and then clears the input -->
   <button
-    type="button"
-    class="add-button"
-    (click)="add(heroName.value); heroName.value = ''"
-  >
-    Add hero
-  </button>
+  type="button"
+  class="add-button"
+  (click)="add(heroName.value, +heroAlter.value); heroName.value = ''; heroAlter.value = ''"
+>
+  Add hero
+</button>
 </div>

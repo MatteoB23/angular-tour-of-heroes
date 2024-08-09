@@ -25,6 +25,9 @@
   border-radius: 4px;
   display: block;
   width: 100%;
+  display: flex; /* add this line */
+  align-items: center;
+  padding-left: 10px;
 }
 
 .heroes a:hover {
@@ -83,4 +86,8 @@ button.delete {
 button.delete:hover {
   background-color: #525252;
   color: white;
+}
+
+input{
+  margin-top: 5px;
 }
